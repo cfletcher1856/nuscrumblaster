@@ -25,3 +25,12 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+nuscrumblaster/settings/colin.py
+tmp/*
+!tmp/.empty
+nuscrumblaster/static/*
+!nuscrumblaster/static/.empty
+
+.ropeproject
+
