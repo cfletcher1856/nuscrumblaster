@@ -1,10 +1,12 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models.aggregates import Max, Count
 from django.db.models.signals import post_save
 from django.utils.encoding import smart_unicode
 
-class Board(models.Model):
+from django_extensions.db.models import TimeStampedModel
+
+
+class Board(TimeStampedModel):
     user = models.ForeignKey(User)
     title = models.CharField(max_length=255)
 
@@ -18,7 +20,9 @@ STAGE_CHOICES = (
     ('review', 'Review'),
     ('done', 'Done'),
 )
-class Stage(models.Model):
+
+
+class Stage(TimeStampedModel):
     board = models.ForeignKey(Board)
     order = models.IntegerField()
     title = models.CharField(max_length=30, choices=STAGE_CHOICES)
@@ -37,7 +41,9 @@ COLOR_CHOICES = (
     ('blue', 'Blue'),
     ('orange', 'Orange'),
 )
-class Story(models.Model):
+
+
+class Story(TimeStampedModel):
     stage = models.ForeignKey(Stage)
     description = models.TextField()
     color = models.CharField(max_length=30, choices=COLOR_CHOICES)
@@ -62,11 +68,12 @@ class Story(models.Model):
     def __unicode__(self):
         return smart_unicode(self.description)
 
+
 def create_stages(sender, **kwargs):
     if kwargs.get("created"):
         instance = kwargs["instance"]
         for order, stage in enumerate(STAGE_CHOICES):
             key, label = stage
-            instance.stage_set.get_or_create(order=order, title = key)
+            instance.stage_set.get_or_create(order=order, title=key)
 
 post_save.connect(create_stages, sender=Board)

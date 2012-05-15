@@ -96,7 +96,8 @@ INSTALLED_APPS = (
 
     'compressor',
     'registration',
-    'haystack',
+    #'haystack',
+    'django_extensions',
 
     'nuscrumblaster.board',
 )
