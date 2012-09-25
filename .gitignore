@@ -27,6 +27,8 @@ pip-log.txt
 .mr.developer.cfg
 
 nuscrumblaster/settings/colin.py
+nuscrumblaster/settings/local.py
+
 tmp/*
 !tmp/.empty
 nuscrumblaster/static/*

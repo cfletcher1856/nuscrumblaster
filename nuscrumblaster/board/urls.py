@@ -8,5 +8,5 @@ urlpatterns = patterns('',
     url(r'^$', IndexView.as_view(), name='index'),
     url(r'^api/', include(v1.urls)),
     url(r'^profile/(?P<pk>[a-zA-Z0-9\-]+)/$', ProfileView.as_view(), name='profile'),
-    (r'^search/', include('haystack.urls')),
+    #(r'^search/', include('haystack.urls')),
 )
