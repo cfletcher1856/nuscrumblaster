@@ -1,38 +1,45 @@
-*.py[co]
+########################
+# sails
+########################
+.sails
+.waterline
+.rigging
+.tmp
 
-# Packages
-*.egg
-*.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
 
-# Installer logs
-pip-log.txt
+########################
+# node.js / npm
+########################
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
 
-# Unit test / coverage reports
-.coverage
-.tox
+pids
+logs
+results
 
-#Translations
-*.mo
+node_modules
 
-#Mr Developer
-.mr.developer.cfg
+npm-debug.log
 
-nuscrumblaster/settings/colin.py
-nuscrumblaster/settings/local.py
 
-tmp/*
-!tmp/.empty
-nuscrumblaster/static/*
-!nuscrumblaster/static/.empty
+########################
+# misc / editors
+########################
+*~
+*#
+.DS_STORE
+.netbeans
+nbproject
+.idea
 
-.ropeproject
 
+########################
+# local config
+########################
+config/local.js

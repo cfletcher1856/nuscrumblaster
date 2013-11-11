@@ -1,0 +1,24 @@
+{
+    "name": "nuscrumblaster",
+    "private": true,
+    "version": "0.0.0",
+    "description": "Dev tracking tool",
+    "dependencies": {
+        "sails": "0.9.x",
+        "grunt": "0.4.1",
+        "sails-disk": "~0.9.0",
+        "ejs": "0.8.4",
+        "optimist": "0.3.4"
+    },
+    "scripts": {
+        "start": "node app.js",
+        "debug": "node debug app.js"
+    },
+    "main": "app.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com:cfletcher1856/nuscrumblaster.git"
+    },
+    "author": "Colin Fletcher <cfletcher1856@gmail.com>",
+    "license": "MIT"
+}
